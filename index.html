@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>포인핸드</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/87e1a53cc0.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    
+
+    <script>
+        window.addEventListener("DOMContentLoaded",
+            function() {
+                console.log("로딩끝!");
+
+
+            }); ///////////// load /////////////////////
+        ////////////////////////////////////////////
+        ////////////////////////////////////////////
+        
+        
+        function show() {
+            var tg = document.getElementById("nav");
+            tg.classList.toggle("on");
+
+            var tg = document.getElementsByClassName("toggle")[0];
+            tg.classList.toggle("on");
+
+        }; ///////////////토글버튼스크립트
+        
+        
+        function next() {
+            var tg = document.getElementsByClassName("slide_warp")[0];
+            tg.classList.toggle("next");
+
+        }; ///////////////토글버튼스크립트
+  
+        
+        /// jQB /////////////////////
+        $(function(){
+            setTimeout("upRate(1,27.4)",1000);
+            setTimeout("upRate(0,19.2)",1000);
+    
+        });////////////// jQB ///////////////////////
+        /////////////////////////////////////////////
+        /////////////////////////////////////////////
+        
+        /*//////////////////////////////////////////////
+            함수명: upRage
+            기능: 퍼센트 증가
+        *///////////////////////////////////////////////
+        
+        // 배열에 전역변수로 셋팅
+        var rate = [0.0,0.0];
+        
+        function upRate(seq,limit){
+            //seq - 요소순번
+            //limit - 한계수치
+            
+            rate[seq] += 0.1;
+            
+            //console.log("퍼센트!"+rate1.toFixed(1));
+            
+            /// 출력하기 ////
+            $(".rate").eq(seq).text(rate[seq].toFixed(1));
+            
+            
+            // 재귀호출(나자신을 호출!)
+            if(rate[seq] < limit){
+                setTimeout(function(){
+                    upRate(seq,limit);
+                },3);
+            } //// if문 ////////////////
+             
+        } ////// upRage 함수 //////////////////////////////////
+        /////////////////////////////////////////////////
+        /////////////////////////////////////////////////
+        
+        
+        
+        
+        
+    </script>
+
+</head>
+
+<body>
+    <div class="warp">
+
+        <!-------------------------전체메뉴------------------------->
+        <nav id="nav">
+            <div class="menu_warp">
+                <ul class="menu">
+                    <li><a href=""><span></span>Main</a></li>
+                    <li><a href=""><span></span>통계현황</a></li>
+                    <li><a href=""><span></span>보호소 리스트</a></li>
+                    <li><a href=""><span></span>포인핸드 소식</a></li>
+                    <li><a href=""><span></span>입양해주세요</a></li>
+                </ul>
+            </div>
+            <div class="menu_warp">
+                <div class="menu2">
+                    <ul>
+                        <li><a href=""><i class="fab fa-facebook"></i>facebook</a></li>
+                        <li><a href=""><i class="fab fa-instagram"></i>instagram</a></li>
+                        <li><a href=""><i class="fas fa-envelope-open"></i>mail</a></li>
+                    </ul>
+                    <div class="menu_logo">
+                        <div class="img_repeat">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </nav>
+
+        <!----------------------------상단바------------------------->
+        <header class="clb">
+            <div class="gnb">
+                <h1>PAWINHAND</h1>
+                <div class="lnb">
+                    <ul>
+                        <li><a href="">유기동물찾기앱</a></li>
+                        <li><a href="">포인핸드팀</a></li>
+                    </ul>
+                </div>
+
+                <div class="toggle" onclick="show()">
+                    <span></span>
+                </div>
+            </div>
+        </header>
+
+        <!-------------------------첫번째페이지------------------------->
+        <section id="section1">
+            <span class="top_btn">
+                <img src="images/top_btn.png" alt="상단이동버튼" style="cursor:pointer;" onclick="window.scrollTo(0,0);">
+            </span>
+
+            <div class="section1">
+                <div class="leftbox clb">
+
+                    <h2><span>포인핸드에서,</span></h2>
+                    <h2><span>실시간 ‘유기동물통계’를 </span></h2>
+                    <h2><span>알려드립니다.</span></h2>
+
+                    <h5>
+                        <span>포인핸드는 사람과 동물 모두가 행복한 세상을 만들어갑니다.</span>
+                    </h5>
+
+                    <h1><span class="outline">PawinHand</span></h1>
+
+                </div>
+                <div class="rightbox clb">
+
+
+                    <ul class="statistics_rbx">
+                        <li class="statistics">
+                            <small>안락사율</small><!--19.2-->
+                            <h3><em class="rate">0.0</em><span>%</span></h3>
+                        </li>
+                        <li class="statistics">
+                            <small>입양률</small><!--27.4-->
+                            <h3><em class="rate">0.0</em><span>%</span></h3>
+                        </li>
+                        <i class="fas fa-plus"></i>
+
+                    </ul>
+
+
+                </div>
+            </div>
+            <div class="scrolldown">SCROLL DOWN<br><img src="images/scroll_down_btn.png" alt="스크롤버튼"></div>
+
+        </section>
+   
+
+        <!-------------------------두번째페이지------------------------->
+        <section id="section2">
+
+            <div class="section2">
+                <div class="leftbox">
+                    <div class="title clb">
+
+                        <h3>전국 유기동물 현황</h3>
+
+                        <div class="form clb">
+                            <span class="option clb">지역선택<i class="fas fa-angle-down"></i></span>
+                            <span class="option clb">세부지역<i class="fas fa-angle-down"></i></span>
+
+                        </div>
+                    </div>
+                    <h5><i class="far fa-calendar-minus"></i>2017년01월01일~ 2020년08월07일</h5>
+                    <div class="graph_warp">
+                        <div class="graph clb">
+                            <span class="percent">29.5%</span>
+                        </div>
+
+                        <ul class="graph_info">
+                            <li><small>■</small> 보호중<span>29.5%</span></li>
+                            <li><small>■</small> 입양<span>31%</span></li>
+                            <li><small>■</small> 반환<span>12.5%</span></li>
+                            <li><small>■</small> 안락사<span>20.1%</span></li>
+                            <li><small>■</small> 자연사<span>9.8%</span></li>
+                            <li><small>■</small> 방사<span>1.6%</span></li>
+                            <li><small>■</small> 기증<span>2.5%</span></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="rightbox">
+                    <div class="ibx_center">
+
+                        <ul class="bargraph">
+                            <li> <h6>보호중</h6><span></span></li>
+                            <li> <h6>입양</h6><span></span></li>
+                            <li> <h6>반환</h6><span></span></li>
+                            <li> <h6>안락사</h6><span></span></li>
+                            <li> <h6>자연사</h6><span></span></li>
+                            <li> <h6>방사</h6><span></span></li>
+                            <li> <h6>기증</h6><span></span></li>
+                        </ul>
+                    </div>
+                    <p>데이터 출저: 농림 축산 식품부</p>
+
+
+                </div>
+            </div>
+        </section>
+        <!-------------------------세번째페이지------------------------->
+        <section id="section3" >
+
+            <div class="ltitle clb">
+                <h3><span>지역내 보호소 리스트</span></h3>
+                <div class="form clb">
+                    <span class="option clb">지역선택<i class="fas fa-angle-down"></i></span>
+                    <span class="option clb">세부지역<i class="fas fa-angle-down"></i></span>
+                </div>
+
+            </div>
+            <ul class="list">
+                <li>
+                    <span class="cte">병원</span>
+                    <span class="rbx">
+                        <span class="Hline"></span>
+                        <span class="list_warp">
+                            <h4>GD동물병원</h4>
+
+                            <div class="list_contents">
+                                <p>서울특별시 강동구 상일로 13 (상일동)</p>
+                                <br>
+                                <p>02-429-8822</p>
+                            </div>
+                        </span>
+                    </span>
+                </li>
+                <li>
+                    <span class="cte">병원</span>
+                    <span class="rbx">
+                        <span class="Hline"></span>
+                        <span class="list_warp">
+                            <h4>GD동물병원</h4>
+
+                            <div class="list_contents">
+                                <p>서울특별시 강동구 상일로 13 (상일동)</p>
+                                <br>
+                                <p>02-429-8822</p>
+                            </div>
+                        </span>
+                    </span>
+                </li>
+
+                <li><span class="rbx"><span class="center">more +</span></span></li>
+
+            </ul>
+
+
+        </section>
+
+
+        <!-------------------------네번째페이지------------------------->
+        <section id="section4">
+
+            <div class="section4">
+                <div class="news_title">
+                    <h4>PAWINHAND NEWS</h4>
+                    <h5>More --------></h5>
+                </div>
+                <div class="leftbox">
+
+
+                    <div class="news_view">
+                        <span class="newsdate"> <span></span><b>August</b>,08</span>
+                        <div class="newstit">
+                            <h2>포인핸드 매거진</h2>
+                            <h2>펀딩 D-5</h2>
+                        </div>
+                        <div class="view">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="rightbox">
+                    <ul class="news_list">
+                        <li>
+                            <span class="news_txt clb">
+                                <span class="newsdate">
+                                    <span></span><b>August</b>,06
+                                </span>
+                                <div class="newstit">
+                                    buy, bye 사지말고, 입양하세요.
+                                </div>
+                            </span>
+                            <span class="news_img clb">
+                            </span>
+                        </li>
+                        <li>
+                            <span class="news_txt clb">
+                                <span class="newsdate">
+                                    <span></span><b>July</b>,30
+                                </span>
+                                <div class="newstit">
+                                    buy, bye 사지말고, 입양하세요.
+                                </div>
+                            </span>
+                            <span class="news_img clb"></span>
+                        </li>
+                        <li>
+                            <span class="news_txt clb">
+                                <span class="newsdate">
+                                    <span></span><b>July</b>,12
+                                </span>
+                                <div class="newstit">
+                                    buy, bye 사지말고, 입양하세요.
+                                </div>
+                            </span>
+                            <span class="news_img clb"></span>
+                        </li>
+                        <li>
+                            <span class="news_txt clb">
+                                <span class="newsdate">
+                                    <span></span><b>July</b>,08
+                                </span>
+                                <div class="newstit">
+                                    buy, bye 사지말고, 입양하세요.
+                                </div>
+                            </span>
+                            <span class="news_img clb"></span>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </section>
+        <!-------------------------슬라이드페이지------------------------->
+        <div class="slide_warp">
+           
+            <section class="slide">
+
+                <i class="fas fa-chevron-right" onclick="next()"></i>
+            </section>
+            <section class="slide">
+                <i class="fas fa-chevron-left" onclick="next()"></i>
+            </section>
+        </div>
+        
+        <!-------------------------마지막페이지------------------------->
+        <section id="section6">
+
+
+            <div class="section6">
+                <span class="outline">
+                    PawinHand-Team</span>
+                <h5>포인핸드는 사람과 동물 모두가 행복한 세상을 만들어갑니다. 포인핸드는 정부나 보호소와는 관련 없습니다.</h5>
+
+
+            </div>
+
+
+        </section>
+
+    </div>
+
+
+
+
+        
+
+</body></html>

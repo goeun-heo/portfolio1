@@ -1,0 +1,208 @@
+#section2{width: 100%;height: 100%;}
+
+
+
+/*왼쪽*/
+
+
+.section2 .leftbox{
+    width:60%;
+    position: relative;
+    border-right:1px solid rgba(255, 255, 255, 0.62);
+    padding-right: 50px;
+}
+
+.section2 .leftbox .title{
+        width: 100%;
+        position: relative;
+        height: 80px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.section2 .leftbox .title h3{
+    float: left;
+    position: absolute;
+    top: 0;
+
+
+}
+
+/*셀렉트박스*/
+
+.section2 .form{
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    
+}
+.section2 .option{
+    width:100px;
+  
+}
+.section2 .option:last-child{
+    margin-right:0%;
+}
+
+
+
+/*원형그래프*/
+.graph_warp{
+    width:100%;
+    height: calc(100% - 150px);
+    position: relative;
+}
+.section2 h5{
+    height: 80px;
+    line-height: 80px;
+}
+.section2 h5 i{ padding-right: 10px; }
+.graph{
+    float: left;
+    width:50%;
+    position:relative; 
+}
+
+.graph::before{
+    content: "";
+    padding-top:100%;
+    display: block;
+    background:url(../images/circle.png) no-repeat center/cover;
+    
+}
+.percent{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color:#fff;
+    font-size: 30px;
+    font-weight:600;
+    
+}
+
+
+.section2 h5{    
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+
+    
+}
+
+/*통계현황*/
+
+
+.graph_info{
+    float: left;
+    width:40%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 10%;
+
+}
+
+.section2 .graph_info li{
+    clear: both;
+    color:#fff;
+    opacity: 0.5;
+    font-size: 16px;
+    font-weight:400;
+    line-height: 2;
+        
+}
+
+.section2 .graph_info li span{
+padding-left:20px;
+
+}
+
+.section2 .graph_info li:hover{
+    opacity: 1;
+}
+
+.section2 li small{font-size: 9px;}
+
+/*오른쪽*/
+.section2 .rightbox{
+    padding-left: 50px;
+    width:40%;
+    overflow: hidden;
+}
+.section2 .rightbox .ibx_center{
+    padding-bottom: 80px;
+}
+
+/*바그래프*/
+.bargraph{
+    color:#fff;
+
+   
+}
+.bargraph li{
+    clear: both;
+    font-size:18px;
+    padding: 5px;
+    position: relative;
+    width: 100%;
+}
+.bargraph li h6{
+    font-size: 17px;
+    width:60px;
+    display: inline-block;
+}
+
+.bargraph li span{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height:15px;
+    background: #fff;
+    margin-left: 20px;
+    position: absolute;
+}
+.bargraph  li:nth-child(1) span{width:20%}
+.bargraph  li:nth-child(2) span{width:70%}
+.bargraph  li:nth-child(3) span{width:40%}
+.bargraph  li:nth-child(4) span{width:60%}
+.bargraph  li:nth-child(5) span{width:55%}
+.bargraph  li:nth-child(6) span{width:1%}
+.bargraph  li:nth-child(7) span{width:3%}
+
+
+/*데이터출저*/
+.rightbox p{
+    border-top:1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 20px;
+    height: 80px;
+    font-size: 14px;
+    color:#fff;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+
+/*지역보호리스트*/
+.downtxt{
+    width:50px;
+    height:100%;
+    float: left;    
+    position: relative;
+    overflow: hidden;
+}
+.downtxt i{padding-right: 5px;}
+.downtxt h4{
+    width:300px;
+    position: absolute;
+    bottom: 200px;
+    right: -125px;
+    color:#fff;
+    transform: rotate(-90deg);
+    font-size: 1px;
+
+}
+

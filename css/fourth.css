@@ -1,0 +1,195 @@
+
+.section4{height: 100%;width: 100%;}
+.section4 .leftbox{
+   padding-bottom: 100px;
+    height: calc(100% - 100px);}
+
+.news_title{
+
+    width: 100%;
+    height: 100px;
+    color:#fff;
+    position: relative;
+}
+
+.news_title h4{
+    position: absolute;
+    bottom: 20px;
+}
+.news_title h5{
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    color:#fff;
+  
+}
+
+.news_view{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: .4s ease-out;
+
+}
+
+.news_view::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: url('../images/cat1.jpg')no-repeat center center /cover;
+    opacity: .7;
+     transition: .4s;
+   
+}
+
+
+.news_view .newstit{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    
+}
+
+.news_view .newstit h2{
+   transition: .4s ;
+
+}
+
+.news_view .newstit h2:first-child{
+display: inline-block;
+}
+.news_view .newsdate{
+    color:#fff;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    
+}
+.newsdate span{display: inline-block;width:100px;height: 1px;
+background: #fff;margin-right: 10px}
+
+.news_view .view{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: .3s;
+}
+
+.news_view .view i{
+    color:#fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size:60px;opacity: .9;
+   
+}
+.news_view:hover.news_view::before{opacity: .2;}
+.news_view:hover .view{opacity:1;}
+.news_view:hover .newstit h2{
+}
+
+
+
+/*오른쪽*/
+.section4 .rightbox{
+    padding-bottom: 100px;
+    height:calc(100% - 100px);
+    padding-left:3.25vw;
+}
+
+.news_list{
+    width: 100%;
+    height: 100%;
+    border-top:2px solid #fff;
+    border-bottom:2px solid #fff;
+    overflow: auto;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+
+.news_list::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera*/
+}
+
+.news_list {padding:0 0px;}
+
+.news_list li{
+    border-bottom:1px solid rgba(255, 255, 255, 0.2);
+    height:auto;
+    display: block;
+    width:100%;
+    color:#fff;
+    padding: 20px;
+    transition: .5s;
+}
+
+.news_list li:hover{
+    background: rgba(255, 255, 255, 0.28)
+}
+
+
+
+.news_txt{
+    float: left;
+    display: block;
+    width:60%;
+    height: 100%;
+}
+
+.news_img{
+    position: relative;
+    float: left;
+    display: block;
+    width:40%;
+    opacity: .5;
+    transition: .5s;
+}
+
+.news_list li:hover .news_img{
+    opacity: 1;
+}
+
+.news_img::before{
+    content: "";
+    display: block;
+    padding-top: 100%;
+    
+}
+
+.news_list li:nth-child(1) .news_img::before{
+    background: url(../images/7312FCE7-AAD8-4AC9-9ADF-CDB6D5D3BCE6.jpeg)no-repeat center center/cover;
+}
+
+.news_list li:nth-child(2) .news_img::before{
+    background: url(../images/timur-m-SAKLELG-pO8-unsplash.jpg)no-repeat center center/cover;
+}
+.news_list li:nth-child(3) .news_img::before{
+    background: url(../images/elijah-m-henderson-65ZMOrY9eEg-unsplash.jpg)no-repeat center center/cover;
+}
+.news_list li:nth-child(4) .news_img::before{
+    background: url(../images/joe-caione-qO-PIF84Vxg-unsplash.jpg)no-repeat center center/cover;
+}
+.news_list .newsdate{
+    font-size: 22px;
+}
+.news_list .newsdate span{
+    width:20px;
+    height: 2px;
+}
+
+.news_list .newstit{
+   
+    padding: 20px;
+    padding-left:30px;
+    font-size:16px;
+    font-weight: 300;
+}   
